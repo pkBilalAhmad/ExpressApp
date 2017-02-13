@@ -1,4 +1,8 @@
 var express = require('express')
+var mongoose = require('mongoose')
+
+
+
 var app = express()
 
 app.get('/', function (req, res, next) {
@@ -14,4 +18,9 @@ app.get('/home', function(req,res,next){
 
 app.listen(port, function () {
   console.log('Example app listening on port !')
+})
+
+mongoose.connect('mongodb://pkbilal:636363@ds151059.mlab.com:51059/express-hello-world');
+mongoose.connection.on('connected', function(){
+    console.log("mongoose is connected")
 })
