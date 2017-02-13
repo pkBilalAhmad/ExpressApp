@@ -43,14 +43,20 @@ app.post("/add", function (req, res, next) {
 
 app.get("/", function (req, res, next) {
     console.log("reauest is comming to '/' ");
-    res.send("Hello world");
+    res.send("Hello Karachi");
 });
+app.get('/home', function(req,res,next){
+    res.send('this. is Home')
+})
 
 app.listen(port, function () {
     console.log('app is running on port', port);
 });
 
-mongoose.connect("mongodb://malikasinger:pakistan1@ds149049.mlab.com:49049/malikasinger-demo");
+mongoose.connect("mongodb://pkbilal:636363@ds151059.mlab.com:51059/express-hello-world");
+
+
+
 
 mongoose.connection.on('connected', function () {
     console.log("Mongoose is connected");
